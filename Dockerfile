@@ -41,3 +41,9 @@ RUN	pip3 install paho.mqtt && \
 	
 RUN cd && \
     git clone https://github.com/cyberjunky/RTL-SDR-P2000Receiver-HA.git
+
+COPY config.ini /root/RTL-SDR-P2000Receiver-HA
+
+CMD ["/root/RTL-SDR-P2000Receiver-HA/p2000.py"]
+#CMD ["rtl_test"]
+#CMD ["rtl_fm -f 169.65M -M fm -s 22050 | multimon-ng -a FLEX -t raw -"]
